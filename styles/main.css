@@ -182,10 +182,13 @@ nav ul li a:hover {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        /* default order is 1, so by setting this to 2, we move it after the aside */
+        order: 2;
     }
 
     aside {
-        flex-grow:1;
+        flex-grow: 1;
     }
 
 
