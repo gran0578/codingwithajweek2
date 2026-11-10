@@ -127,3 +127,66 @@ section:nth-of-type(4) article div:nth-of-type(2) {
     flex-grow: 2;
 
 }
+
+/****************************************************
+             FLEX EXAMPLE FOR NAV
+*****************************************************/
+
+
+nav ul {
+    /* make the list items inside the ul sit next to each other */
+    display: flex;
+    justify-content: space-evenly; /* this would be great if you wanted a text-based navigation system */
+    
+    /* you can tell the objects to wrap up to the next line (row or column) if they no longer fit inside the flexbox */
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    flex-grow: 1;
+    background-color: lightgreen;
+
+    /* you can put a flexbox inside of a flexbox */
+    display: flex;
+}
+
+nav ul li a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1em;
+}
+
+
+nav ul li a:hover {
+    background-color: white;
+}
+
+/****************************************************
+                 MEDIA QUERIES
+*****************************************************/
+
+
+/* at a minimum of 640px and above, apply these styles */
+@media screen and (min-width:640px) {
+    /* apply flexbox to the div with the class flexer, which contains the main and the aside, so the main and aside will sit next to each other */
+    .flexer {
+        display: flex;
+        gap: 1em;
+    }
+
+    /* using flex-grow, weight the main and aside */
+    main {
+        flex-grow: 4;
+
+        /* make the content in the main distributed vertically to take up as much space as the sidebar */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    aside {
+        flex-grow:1;
+    }
+
+
+}
